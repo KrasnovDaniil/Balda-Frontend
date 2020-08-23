@@ -7,44 +7,41 @@ import Input from '../Input/Input';
 
 import './Chat.css';
 
-
 const Chat = ({ location }) => {
+  // here are 'react useState hooks' it's kind of a class properties but for functional components 
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  // messageObj represents message data namely text and sender name 
   const [messageObj, setMessageObj] = useState({ text:'qwe', user:'' });
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState(''); // just text of current typed message
   const [messages, setMessages] = useState([]);
 
-  const setterM = (msg) => {
-    setMessages((messages) => [...messages, msg]);    
-  };
-
   useEffect(() => {
-    const { name, room } = queryString.parse(location.search);    
-    setRoom(room);
+    const { name, room } = queryString.parse(location.search);  // parse specified data from URL to pair (tuple)
+    setRoom(room); // set user name and his room
     setName(name);
-    const greetingMsg = {text: `Hello ${name}`, user: 'admin'};
-    setterM(greetingMsg);
-
+    const greetingMsg = {text: `Hello ${name}`, user: 'admin'}; // just a greeting mesage
+    setMessages((messages) => [...messages, greetingMsg]); // add greeting message from admin
   },[]);
 
-  useEffect(() => {
-  }, []);
-
-const saveBoth = (value) => {
+  // Helping method for saving message and messageObj
+  // I united two setters in one method, because, as I noticed, they don't work properly separately in Input.js
+  // and I don't know why may be here are some problems with asynchronous. 
+  const saveBoth = (value) => {
     setMessage(value);
     setMessageObj(() =>({
       text: value,
       user: name,
     }));
-}
+  }
 
   // method of sending message
   const sendMessage = (event) => {  
     event.preventDefault();
     
+    // here may be other logic for message validation
     if (message) {
-      setterM(messageObj);
+      setMessages((messages) => [...messages, messageObj]); 
       setMessage(()=>'')
     }
   };
