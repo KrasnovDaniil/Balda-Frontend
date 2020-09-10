@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXISTS users (
-    id SERIAL PRIMARY KEY ,
-    fist_name VARCHAR(20) NOT NULL ,
-    last_name VARCHAR(20) NOT NULL ,
-    email VARCHAR(30) NOT NULL ,
-    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
