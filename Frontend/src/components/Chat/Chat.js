@@ -3,12 +3,13 @@ import queryString from 'query-string';
 import SockJS from 'sockjs-client';
 import Stomp from '@stomp/stompjs';
 
+// For now here will be commented code, because more likely I will use it in future
+// for properly interacting with websockets
 
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import {sendMsg} from '../../util/ws'
-// import SocketConnection from './SocketConnection'; 
 
 import './Chat.css';
 
@@ -75,7 +76,7 @@ const Chat = ({ location }) => {
       // here should be sending message to backend like below
       // stompClient.send("/app/message", {}, JSON.stringify({'name':$("#name").val()}));
       // socketCon.sendMsg(message);
-      sendMsg({text: message})
+      sendMsg({text: message}) 
     }
   };
 

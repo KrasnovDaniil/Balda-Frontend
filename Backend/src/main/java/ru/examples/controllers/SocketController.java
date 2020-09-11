@@ -9,13 +9,8 @@ import org.springframework.web.util.HtmlUtils;
 import ru.examples.models.HelloMsg;
 import ru.examples.models.WebMsg;
 
-//@CrossOrigin(origins = "http://localhost:3000")
 @Controller
 public class SocketController {
-    @MessageMapping()
-    public void isListened(){
-        System.out.println("YEEEEEAHH");
-    }
 
     // 2-nd place where request will process by this method or controller on tag "/hello" like "app/hello"
     @MessageMapping("/hello") // get request from this
