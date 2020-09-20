@@ -34,3 +34,8 @@ export function sendMsg(message) {
     stompClient.send("/app/hello", {}, JSON.stringify(message)) // send message on specified address
     console.log("Sent")
 }
+
+/*
+    Убрать лишний код из МР-а
+    
+*/ 

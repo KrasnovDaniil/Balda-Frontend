@@ -21,9 +21,10 @@ public class Message {
 
     }
 
-    public Message(String text, User sender) {
+
+    public Message(String text) {
         this.text = text;
-        this.sender = sender;
+//        this.sender = sender;
     }
 
     public long getId() {

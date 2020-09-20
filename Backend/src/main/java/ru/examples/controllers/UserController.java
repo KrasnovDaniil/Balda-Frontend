@@ -22,7 +22,7 @@ public class UserController {
 
     @GetMapping("{userName}")
     public User getUser(@PathVariable String userName){
-        return userRepository.findByFirstName1(userName);
+        return userRepository.findByFirstName(userName);
     }
 
 }

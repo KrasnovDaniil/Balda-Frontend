@@ -9,7 +9,6 @@ import ru.examples.repositories.UserRepository;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-//public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -23,7 +22,4 @@ public class Application implements CommandLineRunner {
         this.userRepository.save(new User("Timur", "Privetov", "timur@mail.ru"));
         this.userRepository.save(new User("Jan Ove", "Waldner", "waldner@mail.ru"));
     }
-    /*
-    * The backend is done, so all that remains is React part. This I will do tomorrow with new power
-    * */
 }
