@@ -1,7 +1,10 @@
 package ru.examples.models;
 
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "messages")
@@ -10,21 +13,28 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "text")
-    private String text;
+    @Column(name = "content")
+    private String content;
 
-    @OneToOne
+//    @OneToMany
 //    @Column(name = "sender")
-    private User sender;
+    private String sender;
 
-    public Message(){
+    @CreationTimestamp
+    @Column(name = "creation_date")
+    private LocalDateTime timestamp;
 
-    }
+    @Column(name = "Room_ID")
+    private long roomID;
 
 
-    public Message(String text) {
-        this.text = text;
-//        this.sender = sender;
+
+    public Message(){}
+
+    public Message(String content, String sender, long roomID) {
+        this.content = content;
+        this.sender = sender;
+        this.roomID = roomID;
     }
 
     public long getId() {
@@ -35,19 +45,11 @@ public class Message {
         this.id = id;
     }
 
-    public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    }
-
-    public User getSender() {
+    public String getSender() {
         return sender;
     }
 
-    public void setSender(User sender) {
+    public void setSender(String sender) {
         this.sender = sender;
     }
 }

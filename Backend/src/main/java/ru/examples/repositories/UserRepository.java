@@ -1,5 +1,6 @@
 package ru.examples.repositories;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,4 +15,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findByFirstName1(@Param("userName") String userName);
 
     User findByFirstName(String userName);
+
+    User findUserById(Long id);
+
 }

@@ -6,4 +6,5 @@ import ru.examples.models.Message;
 public interface MessageRepository extends JpaRepository<Message, Long> {
 
     Message findMessageById(Long id);
+
 }
