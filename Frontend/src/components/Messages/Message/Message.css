@@ -1,7 +1,7 @@
 .messageBox {
   background: #F3F3F3;
-  border-radius: 20px;
-  padding: 5px 20px;
+  border-radius: 15px;
+  padding: 0px 15px;
   color: white;
   display: inline-block;
   max-width: 80%;
@@ -10,7 +10,6 @@
 .messageText {
   width: 100%;
   letter-spacing: 0;
-  float: left;
   font-size: 1.1em;
   word-wrap: break-word;
 }
@@ -28,6 +27,17 @@
 
 .sentText {
   display: flex;
+  align-items: center; 
+  font-family: Helvetica;
+  color: #828282;
+  font-size: 1.1em;
+  letter-spacing: 0.3px;
+}
+/* ДЗ по философии:
+написать короткая письменная работа 0.5 страницы: как будет смотреть на ситуацию с ковидом материалист и идеалист? */
+
+.sentTime {
+  display: flex;
   align-items: center;
   font-family: Helvetica;
   color: #828282;
@@ -39,6 +49,10 @@
 }
 
 .pr-10 {
+  padding-right: 10px;
+}
+
+.pr-40 {
   padding-right: 10px;
 }
 
@@ -64,4 +78,9 @@
 
 .backgroundLight {
   background: #F3F3F3;
+}
+
+.senderName {
+  color: #161400;
+  font-weight: bold;
 }

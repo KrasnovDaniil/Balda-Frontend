@@ -9,6 +9,11 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "messages")
 public class Message {
+
+    public enum MessageType {
+        CHAT, JOIN, LEAVE
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -17,16 +22,18 @@ public class Message {
     private String content;
 
 //    @OneToMany
-//    @Column(name = "sender")
+    @Column(name = "sender")
     private String sender;
 
     @CreationTimestamp
     @Column(name = "creation_date")
     private LocalDateTime timestamp;
 
-    @Column(name = "Room_ID")
+    @Column(name = "room_ID")
     private long roomID;
 
+    @Column(name = "type")
+    private MessageType type;
 
 
     public Message(){}
@@ -51,5 +58,29 @@ public class Message {
 
     public void setSender(String sender) {
         this.sender = sender;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public long getRoomID() {
+        return roomID;
+    }
+
+    public void setRoomID(long roomID) {
+        this.roomID = roomID;
+    }
+
+    public MessageType getType() {
+        return type;
+    }
+
+    public void setType(MessageType type) {
+        this.type = type;
     }
 }
