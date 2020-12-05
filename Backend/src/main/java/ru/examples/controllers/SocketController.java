@@ -17,8 +17,8 @@ import static java.lang.String.format;
 @Controller
 public class SocketController {
 
-    MessageRepository messageRepo;
-    SimpMessageSendingOperations messagingTemplate;
+    private MessageRepository messageRepo;
+    private SimpMessageSendingOperations messagingTemplate;
 
     @Autowired
     public SocketController(MessageRepository messageRepo, SimpMessageSendingOperations messagingTemplate){

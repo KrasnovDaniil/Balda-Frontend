@@ -6,6 +6,9 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+
+// This class also unnecessary for application work, it was created beforehand
+// It represents message entity in DB
 @Entity
 @Table(name = "messages")
 public class Message {
@@ -21,7 +24,6 @@ public class Message {
     @Column(name = "content")
     private String content;
 
-//    @OneToMany
     @Column(name = "sender")
     private String sender;
 

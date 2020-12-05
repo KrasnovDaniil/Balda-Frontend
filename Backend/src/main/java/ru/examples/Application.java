@@ -22,6 +22,6 @@ public class Application implements CommandLineRunner {
     public void run(String... args) throws Exception {
         this.userRepository.save(new User("Daniil", "Krasnov", "daniil@mail.ru"));
         this.userRepository.save(new User("Timur", "Privetov", "timur@mail.ru"));
-        this.userRepository.save(new User("Jan Ove", "Waldner", "waldner@mail.ru"));
+        this.userRepository.save(new User("Marat", "Maratov", "marat@mail.ru"));
     }
 }
