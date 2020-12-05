@@ -7,7 +7,8 @@ import ru.examples.repositories.UserRepository;
 
 import java.util.List;
 
-// This controller class purposes only for testing in Backend\src\test\java\ru\examples\tests\Tests.java
+// For now this controller class purposes only for test getting data from DB
+// It doesn't influence on total work of app
 @RestController
 @RequestMapping("api/get/")
 public class UserController {
