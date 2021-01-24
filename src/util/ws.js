@@ -19,7 +19,7 @@ export function connect(userName, roomID) {
     username = userName;
     roomId = roomID;
         
-    const socket = new SockJS('http://balda-play.herkuapp.com/ownsite') // connecting to the Spring server
+    const socket = new SockJS('http://balda-play.herokuapp.com/ownsite') // connecting to the Spring server
     stompClient = Stomp.over(socket)
     stompClient.debug = () => {}
     // stompClient.connect({}, frame => {
