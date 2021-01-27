@@ -1,6 +1,6 @@
 Here I want to describe done work:
 
-## Common infor
+## Common info
 Heroku can deploy project from specified branch of Git repository and only on one language (as I understood).
 Heroku requires similar folder structure for Java applications, it means all folders directly are in root directory and `pom.xml` too. The same for JS app - need special structure.   
 So I decided to split actual branch `feature-Chat` on 2 branches - `backend-only` and `frontend-only` and deploy each of them separately.
