@@ -1,32 +1,21 @@
-All working code is in `src/components`, there are style and JS files.   
-I removed server side from [origin code](https://github.com/adrianhajdin/project_chat_application/tree/master/client) 
-and made application only on frontend
+Here I want to describe done work:
 
-## Available Scripts
+## Common infor
+Heroku can deploy project from specified branch of Git repository and only on one language (as I understood).
+Heroku requires similar folder structure for Java applications, it means all folders directly are in root directory and `pom.xml` too. The same for JS app - need special structure.   
+So I decided to split actual branch `feature-Chat` on 2 branches - `backend-only` and `frontend-only` and deploy each of them separately.
 
-In the project directory, you can run:
+## Frontend 
+Locate on balda-frontend.herokuapp.com.
+For now I didn't fix Leo's requrements.
 
-### `npm start`
+## Backend
+Locate on balda-play.herokuapp.com. 
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## How to test
+For test appliation, you need follow this link - balda-frontend.herokuapp.com, you'll see join menu, then input name and room, sign in and chat with roommates.  
+**Main remark:** due to using free type of Heroku hosting, it hosts site not all the time (18 hours max) and work at economic way - turns off site if it doesn't use for some time, so have to wait about half a minute for turning site on.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
+## Some notes
+In a good way, Heroku suggests to transfer or clone original project on separate repository for hosting. But I just added in original repo 2 branches and host them like if they would be repos.
+Further, I'll follow on properly way and allocate repository to each part of application.
