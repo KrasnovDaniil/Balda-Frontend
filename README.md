@@ -6,11 +6,13 @@ Heroku requires similar folder structure for Java applications, it means all fol
 So I decided to split actual branch `feature-Chat` on 2 branches - `backend-only` and `frontend-only` and deploy each of them separately.
 
 ## Frontend 
-Locate on https://balda-frontend.herokuapp.com.
-For now I didn't fix Leo's requrements.
+Host on https://balda-frontend.herokuapp.com.
+[Frontend branch](https://github.com/KrasnovDaniil/freelancer_portal/tree/frontend-only).
+For now I didn't fix Leo's issues.
 
 ## Backend
-Locate on https://balda-play.herokuapp.com. 
+Host on https://balda-play.herokuapp.com. 
+[Backend branch](https://github.com/KrasnovDaniil/freelancer_portal/tree/backend-only)
 
 ## How to test
 First of all, need go to https://balda-play.herokuapp.com and wait some response - Whitelabel error page, it will turn on backend and application will work.
