@@ -13,6 +13,7 @@ For now I didn't fix Leo's requrements.
 Locate on https://balda-play.herokuapp.com. 
 
 ## How to test
+First of all, need go to https://balda-play.herokuapp.com and wait some response - Whitelabel error page, it will turn on backend and application will work.
 For test appliation, you need follow this link - https://balda-frontend.herokuapp.com, you'll see join menu, then input name and room, sign in and chat with roommates.  
 **Main remark:** due to using free type of Heroku hosting, it hosts site not all the time (18 hours max) and work at economic way - turns off site if it doesn't use for some time, so have to wait about half a minute for turning site on.
 
