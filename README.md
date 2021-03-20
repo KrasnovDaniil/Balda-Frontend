@@ -10,7 +10,7 @@ Locate on balda-frontend.herokuapp.com.
 For now I didn't fix Leo's requrements.
 
 ## Backend
-Locate on balda-play.herokuapp.com. 
+Locate on [as](balda-play.herokuapp.com). 
 
 ## How to test
 For test appliation, you need follow this link - balda-frontend.herokuapp.com, you'll see join menu, then input name and room, sign in and chat with roommates.  

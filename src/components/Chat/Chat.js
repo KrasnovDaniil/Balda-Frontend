@@ -32,6 +32,8 @@ export const Chat = ({ location }) => {
     connect(name, room); // connect to WebSocket
     // const greetingMsg = {text: `Hello ${name}`, sender: 'admin'}; // just a greeting mesage
 
+    // displayMessages();
+
     addHandler( curMessage => {
       if (curMessage.sender === name || curMessage.content === null) return;
       setMessages(messages => [...messages, {text:curMessage.content, sender:curMessage.sender}]);     
@@ -39,6 +41,11 @@ export const Chat = ({ location }) => {
     }); 
 
   }, [ENDPOINT, location.search]);
+
+
+  function displayMessages(actual_messages){
+
+  }
 
 
   // method of sending message

@@ -68,6 +68,7 @@ function enterRoom(newRoomId) {
     // and attach handler onMessageReceived()
     // It means this handler will process received messages at that address
     currentSubscription = stompClient.subscribe(`/chat-channel/${roomId}`, onMessageReceived);
+    // _ _ _ here I should get actual messages of that room
 
     // send request for joining current user in chatroom 
     stompClient.send(`${topic}/addUser`,

@@ -1,0 +1,39 @@
+--create table if not exists "Users"(
+--    user_id bigint GENERATED ALWAYS AS IDENTITY,
+--    user_name varchar(30) UNIQUE ,
+--    room bigint NOT NULL,
+--    PRIMARY KEY (user_id),
+--    CONSTRAINT fk_user_room
+--        FOREIGN KEY (room)
+--            REFERENCES "Rooms" (room_id)
+--);
+--
+--create table if not exists "Rooms" (
+--    room_id bigint GENERATED ALWAYS AS IDENTITY,
+--    room_name varchar(30) UNIQUE,
+--    roommates_amount bigint default 0,
+--    PRIMARY KEY (room_id)
+--);
+--
+---- alter table "Rooms" alter column roommates_amount drop not null;
+---- alter table "Rooms" alter column roommates_amount set default 0;
+--
+--create table if not exists "Room_messages" (
+--    room_messages_id bigint GENERATED ALWAYS AS IDENTITY,
+--    rm_room_id bigint NOT NULL,
+--    rm_user_id bigint NOT NULL,
+--    message_content text NOT NULL,
+--    sending_time timestamp default current_timestamp,
+----     UNIQUE (rm_room_id, rm_user_id), -- it's new
+--    PRIMARY KEY (room_messages_id),
+--    CONSTRAINT fk_room
+--        FOREIGN KEY (rm_room_id)
+--            REFERENCES "Rooms" (room_id) ON DELETE CASCADE,
+--    CONSTRAINT fk_user
+--        FOREIGN KEY (rm_user_id)
+--            REFERENCES "Users" (user_id) ON DELETE CASCADE
+--);
+--
+---- drop table "Users" cascade;
+---- drop table "Rooms" cascade ;
+---- drop table "Room_messages" cascade;
