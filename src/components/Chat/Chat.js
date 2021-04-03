@@ -35,7 +35,7 @@ export const Chat = ({ location }) => {
     // displayMessages();
 
     addHandler( curMessage => {
-      if (curMessage.sender === name || curMessage.content === null) return;
+      if (curMessage.content === null) return;
       setMessages(messages => [...messages, {text:curMessage.content, sender:curMessage.sender}]);     
       console.log(messages);
     }); 
@@ -54,7 +54,6 @@ export const Chat = ({ location }) => {
     let calc = message.match(/[\s]*/); // check message on non-space text
     if (message && calc[0] != message) {
       sendMessageToServer(message);
-      setMessages((messages) => [...messages, {text:message, sender:name}]); 
       setMessage('');
     }
   };

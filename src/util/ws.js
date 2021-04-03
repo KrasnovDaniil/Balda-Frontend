@@ -80,22 +80,21 @@ function enterRoom(newRoomId) {
 
 
 
-// send messages to server (backend)
+// send messages to server (backend) as MessageDto
 export function sendMessageToServer(message) {
     let messageContent = message;
 
       // if it's just conversation message, then create response and send it to backend
     if (messageContent && stompClient) {
-      var chatMessage = {
-        user_id: 1,
-        room_id: 1,
-        sender: username,
+      var chatMessageDto = {
+        sender: username, 
         content: messageContent,
-        type: 'CHAT',
-        sendingTime: 
+        room_name: roomId,
+        // sendingTime: new Date(+ new Date()),
+        // type: 'CHAT'
       };
       // send response to backend through websocket using STOMP
-      stompClient.send(`${topic}/sendMessage`, {}, JSON.stringify(chatMessage));
+      stompClient.send(`${topic}/sendMessage`, {}, JSON.stringify(chatMessageDto));
     }
   }
 
@@ -108,6 +107,5 @@ export function onMessageReceived(payload) {
     curHandler(message);
     // handlers.forEach(handler => handler(JSON.parse(payload.body)))
     console.log(message);
- 
 }
   
