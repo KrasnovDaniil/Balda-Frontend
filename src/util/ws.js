@@ -19,7 +19,8 @@ export function connect(userName, roomID) {
     username = userName;
     roomId = roomID;
         
-    const socket = new SockJS('https://balda-play.herokuapp.com/ownsite') // connecting to the Spring server
+    // const socket = new SockJS('https://balda-play.herokuapp.com/ownsite') // connecting to the Spring server
+    const socket = new SockJS('http://localhost:8080/ownsite') // for testing on local machine
     stompClient = Stomp.over(socket)
     stompClient.debug = () => {}
     // stompClient.connect({}, frame => {
@@ -86,9 +87,12 @@ export function sendMessageToServer(message) {
       // if it's just conversation message, then create response and send it to backend
     if (messageContent && stompClient) {
       var chatMessage = {
+        user_id: 1,
+        room_id: 1,
         sender: username,
         content: messageContent,
-        type: 'CHAT'
+        type: 'CHAT',
+        sendingTime: 
       };
       // send response to backend through websocket using STOMP
       stompClient.send(`${topic}/sendMessage`, {}, JSON.stringify(chatMessage));
